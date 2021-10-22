@@ -20,7 +20,7 @@ const User = () => {
       <button onClick={() => dispatch(userAction(inputRef.current.value))}>
         Dispatch action
       </button>
-      {user && <h3>{`User details - ${user.name} (${user.age})`}</h3>}
+      {user && <h3>{`User details ${user.name} (${user.age})`}</h3>}
     </div>
   );
 };

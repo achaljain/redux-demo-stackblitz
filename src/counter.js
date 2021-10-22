@@ -14,7 +14,7 @@ const Counter = () => {
     <div className="comp-container">
       <h2>Counter Component</h2>
       <p>Count: {count}</p>
-      <p>User age - {userAge} </p>
+      <p>User age {userAge} </p>
       <button onClick={() => dispatch(incrementAction())}>Increment</button>
       <button onClick={() => dispatch(decrementAction())}>Decrement</button>
     </div>
