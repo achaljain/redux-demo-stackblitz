@@ -5,6 +5,7 @@ import { incrementAction, decrementAction } from './reducers';
 const Counter = () => {
   const count = useSelector((state) => state.counter);
   const userAge = useSelector((state) => state.user?.age);
+  // const userAge = user?.age;
 
   const dispatch = useDispatch();
 
