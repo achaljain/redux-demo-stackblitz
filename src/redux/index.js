@@ -8,7 +8,7 @@ export default function Redux() {
   return (
     <Provider store={configureStore()}>
       <div>
-        <h1>Redux demo</h1>
+        <h3>Redux demo</h3>
         <Counter />
         <User />
       </div>
