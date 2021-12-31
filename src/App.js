@@ -7,12 +7,16 @@ import './style.css';
 export default function App() {
   const [toggle, setToggle] = useState(false);
 
+  const toggleHandler = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <div>
       <h1>Redux vs Context</h1>
       <div>
-        <button onClick={() => setToggle(!toggle)}>Toggle Mode</button>{' '}
-        <span>{toggle ? 'Redux' : 'Context'}</span>
+        <button onClick={toggleHandler}>Mode</button>
+        <span>{`${toggle ? 'Redux' : 'Context'}`}</span>
       </div>
       {toggle ? <ReduxApp /> : <ContextApp />}
     </div>

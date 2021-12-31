@@ -5,22 +5,24 @@ import { userAction } from './reducers';
 const User = () => {
   const user = useSelector((state) => state.user);
 
-  const inputRef = React.useRef();
+  const nameRef = React.useRef();
 
   const dispatch = useDispatch();
+
+  const addUser = () => {
+    dispatch(userAction({ name: nameRef.current.value }));
+  };
 
   console.log('User Render');
 
   return (
     <div className="comp-container">
-      <h2>User Component</h2>
+      <h2>User Details</h2>
+      <label htmlFor="user-input">Enter name: </label>
+      <input id="user-input" ref={nameRef} />
 
-      <label htmlFor="user-input">Enter a name: </label>
-      <input id="user-input" ref={inputRef} />
-      <button onClick={() => dispatch(userAction(inputRef.current.value))}>
-        Dispatch action
-      </button>
-      {user && <h3>{`User details ${user.name} (${user.age})`}</h3>}
+      <button onClick={addUser}>Start counter</button>
+      {user && <span>Success!</span>}
     </div>
   );
 };

@@ -5,7 +5,7 @@ const initialState = {
 
 const actionsConfig = {
   setCounter: ['counter'],
-  setUser: ['user'],
+  setUser: ['user', 'counter'],
 };
 
 const displayName = 'demo';

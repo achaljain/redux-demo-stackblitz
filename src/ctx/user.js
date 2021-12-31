@@ -1,20 +1,20 @@
-import React from 'react';
-import { WithContextConsumer } from 'smart-context';
+import React, { useContext } from 'react';
+import { getContext } from 'smart-context';
 
-const User = ({ demo }) => {
-  const { state, actions } = demo;
+const User = () => {
+  const { state, actions } = useContext(getContext('demo'));
 
   const { user } = state;
   const { setUser } = actions;
 
-  const inputRef = React.useRef();
+  const nameRef = React.useRef();
 
-  const buttonClick = () => {
+  const addUser = () => {
     setUser({
       user: {
-        name: inputRef.current.value,
-        age: 30,
+        name: nameRef.current.value,
       },
+      counter: 0,
     });
   };
 
@@ -22,14 +22,14 @@ const User = ({ demo }) => {
 
   return (
     <div className="comp-container">
-      <h2>User Component</h2>
+      <h2>User Details</h2>
+      <label htmlFor="user-input">Enter name: </label>
+      <input id="user-input" ref={nameRef} />
 
-      <label htmlFor="user-input">Enter a name: </label>
-      <input id="user-input" ref={inputRef} />
-      <button onClick={buttonClick}>Dispatch action</button>
-      {user && <h3>{`User details ${user.name} (${user.age})`}</h3>}
+      <button onClick={addUser}>Start counter</button>
+      {user && <span>Success!</span>}
     </div>
   );
 };
 
-export default WithContextConsumer(User, ['demo']);
+export default User;

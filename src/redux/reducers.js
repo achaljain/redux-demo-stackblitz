@@ -1,33 +1,26 @@
 export default (state, action) => {
   switch (action.type) {
-    case 'increment':
-      return { ...state, counter: state.counter + 1 };
-    case 'decrement':
-      return { ...state, counter: state.counter - 1 };
+    case 'counter':
+      return { ...state, counter: action.payload };
     case 'user':
-      return { ...state, user: action.payload };
+      return { ...state, user: action.payload, counter: 0 };
     default:
       return state;
   }
 };
 
-export const incrementAction = () => {
+export const counterAction = (payload) => {
   return {
-    type: 'increment',
-  };
-};
-
-export const decrementAction = () => {
-  return {
-    type: 'decrement',
+    type: 'counter',
+    payload,
   };
 };
 
 // Possible failure in action payload type and value
 // TS can catch that, might miss also
-export const userAction = (name) => {
+export const userAction = (payload) => {
   return {
     type: 'user',
-    payload: { name, age: 30 },
+    payload,
   };
 };
