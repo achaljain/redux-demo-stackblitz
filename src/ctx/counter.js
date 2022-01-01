@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { getContext } from 'smart-context';
 
-const CTR = 1000 * 10000;
+const CTR = 1000 * 1000;
 
 const Counter = () => {
   const { state, actions } = useContext(getContext('demo'));

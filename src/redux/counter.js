@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { counterAction } from './reducers';
 
-const CTR = 1000 * 10000;
+const CTR = 1000 * 1000;
 
 const Counter = () => {
   const count = useSelector((state) => state.counter);
