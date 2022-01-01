@@ -1,9 +1,10 @@
 import React, { Profiler } from 'react';
-import { WithContextProvider } from 'smart-context';
-import config from './config';
 import Counter from './counter';
 import User from './user';
 import callback from '../callback';
+
+import { WithContextProvider } from 'smart-context';
+import config from './config';
 
 function ContextApp() {
   return (

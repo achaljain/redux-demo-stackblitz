@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
-import { getContext } from 'smart-context';
+import React from 'react';
+import { WithContextConsumer } from 'smart-context';
 
-const User = () => {
-  const { state, actions } = useContext(getContext('demo'));
+const User = ({ demo }) => {
+  const nameRef = React.useRef();
+
+  const { state, actions } = demo;
 
   const { user } = state;
   const { setUser } = actions;
-
-  const nameRef = React.useRef();
 
   const addUser = () => {
     setUser({
@@ -17,8 +17,6 @@ const User = () => {
       counter: 0,
     });
   };
-
-  console.log('User Render');
 
   return (
     <div className="comp-container">
@@ -32,4 +30,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default WithContextConsumer(User, ['demo']);

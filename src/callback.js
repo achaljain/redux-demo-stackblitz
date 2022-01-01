@@ -10,10 +10,8 @@ const callback = (
   console.log('id - ', id);
   console.log('phase - ', phase);
   console.log('actualDuration - ', actualDuration);
-  console.log('baseDuration - ', baseDuration);
   console.log('startTime - ', startTime);
   console.log('commitTime - ', commitTime);
-  console.log('interactions - ', interactions);
 };
 
 export default callback;
