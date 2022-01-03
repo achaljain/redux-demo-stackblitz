@@ -14,4 +14,6 @@ const callback = (
   console.log('commitTime - ', commitTime);
 };
 
+export const INPUT = 5;
+
 export default callback;

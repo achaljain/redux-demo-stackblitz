@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { counterAction } from './reducers';
+import { INPUT } from '../callback';
 
-const CTR = 1000 * 1000;
+const CTR = INPUT;
 
 const Counter = () => {
   const count = useSelector((state) => state.counter);
